@@ -56,7 +56,7 @@ class _CalculatorState extends State<Calculator> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('GitHub Copilot Calculator'),
+        title: const Text('Noah Vario'),
       ),
       body: Column(
         children: [
