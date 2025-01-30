@@ -46,6 +46,17 @@ class _CalculatorState extends State<Calculator> {
         } catch (e) {
           _result = 'Error';
         }
+      } else if (value == 'x²') {
+        try {
+          final expression = Expression.parse(_controller.text);
+          final evaluator = const ExpressionEvaluator();
+          final result = evaluator.eval(expression, {});
+          _controller.text = (result * result).toString();
+        } catch (e) {
+          _result = 'Error';
+        }
+      } else if (value == '%') {
+        _controller.text += '%';
       } else {
         _controller.text += value;
       }
@@ -104,6 +115,8 @@ class _CalculatorState extends State<Calculator> {
                 _buildButton('C'),
                 _buildButton('='),
                 _buildButton('+'),
+                _buildButton('x²'),
+                _buildButton('%'),
               ],
             ),
           ),
